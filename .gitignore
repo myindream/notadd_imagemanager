@@ -1,3 +1,5 @@
 /.idea
 /vendor
+/resources/mixes/administration/node_modules
+/resources/mixes/administration/dist
 composer.lock

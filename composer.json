@@ -2,8 +2,8 @@
     "name": "notadd/imagesmanager",
     "description": "Notadd's ImagesManager Module.",
     "type": "notadd-extension",
-    "keywords": ["notadd", "baidu", "extension"],
-    "homepage": "https://ileyun.org",
+    "keywords": ["notadd", "imagesmanager", "extension"],
+    "homepage": "https://github.com/myindream/notadd_imagemanager",
     "license": "Apache-2.0",
     "authors": [
         {
