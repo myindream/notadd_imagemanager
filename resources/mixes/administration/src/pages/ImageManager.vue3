@@ -1,0 +1,47 @@
+<script>
+  import injection from '../helpers/injection';
+
+  export default {
+      beforeRouteEnter(to, from, next) {
+          injection.loading.start();
+          injection.http.post(`${window.api}/images/lists`).then(response => {
+              const list = response.data.data;
+              const pagination = response.data.pagination;
+              next(vm => {
+                  vm.list = list;
+                  vm.pagination = pagination;
+                  injection.message.info('获取图片列表成功！');
+                  injection.sidebar.active('ImagesManager');
+              });
+          }).catch(() => {
+              injection.loading.fail();
+          });
+      },
+      methods: {
+          submit() {
+          },
+      },
+  };
+</script>
+<template>
+    <card>
+        <div id="image_manager">
+            <tabs value="images-list">
+                <tab-pane label="图片列表" name="images-list">
+                    <div class="img_delete_btn_box">
+                        <i-button type="primary">确认删除</i-button>
+                    </div>
+                    <div class="img_list_box">
+
+                    </div>
+                    <div class="ivu-page-wrap">
+                        <page :current="pagination.current_page" :page-size="pagination.per_page" :total="pagination.total" ></page>
+                    </div>
+                </tab-pane>
+                <tab-pane label="上传图片" name="images-upload">
+
+                </tab-pane>
+            </tabs>
+        </div>
+    </card>
+</template>

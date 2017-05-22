@@ -1,0 +1,26 @@
+{
+    "name": "notadd/imagesmanager",
+    "description": "Notadd's ImagesManager Module.",
+    "type": "notadd-extension",
+    "keywords": ["notadd", "baidu", "extension"],
+    "homepage": "https://ileyun.org",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "ileyun",
+            "email": "345340585@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Notadd\\ImagesManager\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "notadd/installers": "^0.5.*"
+    }
+
+}
